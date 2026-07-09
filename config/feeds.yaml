@@ -1,0 +1,28 @@
+# Curated RSS feeds for daily AI news collection.
+# Verify these URLs still resolve every so often -- RSS endpoints occasionally
+# move. Add/remove sources freely; each just needs a "name" and a "url".
+
+feeds:
+  - name: OpenAI Blog
+    url: https://openai.com/news/rss.xml
+  - name: Google AI Blog
+    url: https://blog.google/technology/ai/rss/
+  - name: TechCrunch AI
+    url: https://techcrunch.com/category/artificial-intelligence/feed/
+  - name: VentureBeat AI
+    url: https://venturebeat.com/category/ai/feed/
+  - name: Ars Technica AI
+    url: https://arstechnica.com/ai/feed/
+  - name: MIT Technology Review AI
+    url: https://www.technologyreview.com/topic/artificial-intelligence/feed
+  - name: The Verge AI
+    url: https://www.theverge.com/rss/ai-artificial-intelligence/index.xml
+
+settings:
+  # How far back to look for "today's" news (covers scheduler drift / timezone slop).
+  lookback_hours: 30
+  # How many verified stories to carry forward into the digest each day.
+  top_n_stories: 5
+  # Two similar headlines from different sources above this score (0-100)
+  # are treated as the same underlying story (corroboration signal).
+  dedupe_similarity_threshold: 72
